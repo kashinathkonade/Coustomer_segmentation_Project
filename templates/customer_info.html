@@ -1,0 +1,41 @@
+<!-- customer_info.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        div.customer-info {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        p {
+            margin: 10px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer Information</h1>
+    <div class="customer-info">
+        <p>Customer ID: {{ customer_info['CustomerID'].values[0] }}</p>
+        <p>Recency Cluster: {{ recency_cluster }}</p>
+        <p>Frequency Cluster: {{ frequency_cluster }}</p>
+        <p>Revenue Cluster: {{ revenue_cluster }}</p>
+    </div>
+</body>
+</html>

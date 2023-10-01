@@ -1,0 +1,51 @@
+<!-- customer_search.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        form {
+            text-align: center;
+        }
+        
+        select {
+            padding: 10px;
+            width: 300px;
+        }
+        
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Customer ID:</h1>
+    <form method="POST" action="/customer_info">
+        <select name="customer_id">
+            {% for customer_id in customer_ids %}
+        <option value="{{ customer_id|int }}">{{ customer_id|int }}</option>
+        {% endfor %}
+        </select>
+
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
+
